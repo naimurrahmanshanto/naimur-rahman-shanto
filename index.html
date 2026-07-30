@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Md Naimur Rahman Shanto — Disaster Management</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F3F4EF;
+    --surface:#FFFFFF;
+    --ink:#16232F;
+    --ink-soft:#4B5862;
+    --ink-faint:#8A93989c;
+    --line:#D9DBD2;
+    --amber:#C0842C;
+    --amber-soft:#F1E3CA;
+    --teal:#2E6B63;
+    --teal-soft:#DEEAE7;
+    --radius:2px;
+    --maxw:920px;
+  }
+
+  *{box-sizing:border-box; margin:0; padding:0;}
+
+  html{scroll-behavior:smooth;}
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important;}
+  }
+
+  body{
+    background:linear-gradient(180deg, #FAFAF8 0%, #F3F4EF 55%, #F1F2EC 100%);
+    background-attachment:fixed;
+    color:var(--ink);
+    font-family:'Inter', sans-serif;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  .contour-bg{
+    position:absolute; inset:0;
+    z-index:0;
+    opacity:0.5;
+    pointer-events:none;
+  }
+
+  a{color:inherit;}
+
+  .wrap{
+    max-width:var(--maxw);
+    margin:0 auto;
+    padding:0 28px;
+  }
+
+  .mono{
+    font-family:'Inter', sans-serif;
+    letter-spacing:0.02em;
+  }
+
+  .eyebrow{
+    font-family:'Inter', sans-serif;
+    font-size:12px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    overflow:hidden;
+    padding:96px 0 76px;
+    border-bottom:1px solid var(--line);
+    background:
+      radial-gradient(ellipse 900px 520px at 88% -10%, rgba(46,107,99,0.10), transparent 60%),
+      radial-gradient(ellipse 700px 480px at 8% 0%, rgba(192,132,44,0.08), transparent 60%),
+      var(--paper);
+  }
+  .hero .wrap{position:relative; z-index:1;}
+
+  .hero-eyebrow{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:22px;
+    font-size:13px;
+    font-weight:500;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+  }
+  .hero-eyebrow .dot{
+    width:6px; height:6px;
+    border-radius:50%;
+    background:var(--teal);
+    display:inline-block;
+  }
+
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1.5fr 1fr;
+    gap:56px;
+    align-items:start;
+  }
+
+  .facts-card{
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:26px 26px 8px;
+    box-shadow:0 12px 32px -18px rgba(22,35,47,0.18);
+  }
+  .facts-card .fact{
+    padding:14px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .facts-card .fact:last-child{border-bottom:none;}
+  .facts-card .fact-label{
+    font-size:11px;
+    text-transform:uppercase;
+    letter-spacing:0.09em;
+    color:var(--ink-faint);
+    margin-bottom:5px;
+    font-weight:500;
+  }
+  .facts-card .fact-value{
+    font-size:15px;
+    color:var(--ink);
+    font-weight:500;
+  }
+
+  h1.name{
+    font-family:'Source Serif 4', serif;
+    font-optical-sizing:auto;
+    font-weight:600;
+    font-size:clamp(38px, 6vw, 64px);
+    line-height:1.05;
+    letter-spacing:-0.01em;
+    max-width:14ch;
+  }
+
+  .role-line{
+    margin-top:18px;
+    font-size:19px;
+    color:var(--ink-soft);
+    max-width:46ch;
+  }
+  .role-line em{
+    font-style:normal;
+    color:var(--teal);
+    font-weight:600;
+  }
+
+  .thesis{
+    margin-top:28px;
+    max-width:56ch;
+    font-size:16.5px;
+    color:var(--ink-soft);
+  }
+
+  .hero-actions{
+    margin-top:36px;
+    display:flex;
+    gap:14px;
+    flex-wrap:wrap;
+  }
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:11px 18px;
+    font-family:'Inter', sans-serif;
+    font-size:12.5px;
+    letter-spacing:0.04em;
+    border:1px solid var(--ink);
+    border-radius:var(--radius);
+    text-decoration:none;
+    color:var(--ink);
+    background:transparent;
+    transition:background .15s ease, color .15s ease;
+  }
+  .btn.primary{
+    background:var(--ink);
+    color:var(--paper);
+  }
+  .btn:hover{background:var(--amber); border-color:var(--amber); color:var(--ink);}
+  .btn.primary:hover{background:var(--amber); border-color:var(--amber); color:var(--ink);}
+
+  /* ---------- SECTION FRAME ---------- */
+  section{
+    padding:64px 0;
+    border-bottom:1px solid var(--line);
+  }
+  section:last-of-type{border-bottom:none;}
+
+  .sec-head{
+    display:flex;
+    align-items:baseline;
+    gap:16px;
+    margin-bottom:36px;
+  }
+  .sec-code{
+    font-family:'Inter', sans-serif;
+    font-size:12px;
+    color:var(--amber);
+    border:1px solid var(--amber-soft);
+    background:var(--amber-soft);
+    padding:3px 8px;
+    border-radius:var(--radius);
+    white-space:nowrap;
+  }
+  .sec-title{
+    font-family:'Source Serif 4', serif;
+    font-weight:600;
+    font-size:26px;
+    letter-spacing:-0.01em;
+  }
+
+  /* ---------- SUMMARY ---------- */
+  .summary-grid{
+    display:grid;
+    grid-template-columns:1.3fr 1fr;
+    gap:48px;
+  }
+  .summary-grid p{color:var(--ink-soft); font-size:16px;}
+  .field-notes{
+    border-left:2px solid var(--teal);
+    padding-left:20px;
+  }
+  .field-notes .fn-item{margin-bottom:16px;}
+  .field-notes .fn-label{
+    font-family:'Inter', sans-serif;
+    font-size:11px;
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+    color:var(--teal);
+    margin-bottom:2px;
+  }
+
+  /* ---------- FOCUS AREAS ---------- */
+  .focus-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+  }
+  .focus-card{
+    background:var(--surface);
+    padding:26px 24px;
+  }
+  .focus-card .fc-code{
+    font-family:'Inter', sans-serif;
+    font-size:11px;
+    color:var(--ink-faint);
+    margin-bottom:10px;
+  }
+  .focus-card h3{
+    font-family:'Source Serif 4', serif;
+    font-weight:600;
+    font-size:18px;
+    margin-bottom:10px;
+  }
+  .focus-card p{font-size:14.5px; color:var(--ink-soft);}
+
+  /* ---------- TIMELINE (education + experience) ---------- */
+  .tl{
+    position:relative;
+  }
+  .tl-item{
+    display:grid;
+    grid-template-columns:140px 1fr;
+    gap:24px;
+    padding:22px 0;
+    border-top:1px solid var(--line);
+  }
+  .tl-item:first-child{border-top:none;}
+  .tl-date{
+    font-family:'Inter', sans-serif;
+    font-size:12px;
+    color:var(--ink-faint);
+    padding-top:3px;
+  }
+  .tl-org{
+    font-family:'Source Serif 4', serif;
+    font-weight:600;
+    font-size:18px;
+    margin-bottom:2px;
+  }
+  .tl-role{
+    color:var(--teal);
+    font-weight:600;
+    font-size:14.5px;
+    margin-bottom:10px;
+  }
+  .tl-detail{color:var(--ink-soft); font-size:14.5px;}
+  .tl-detail ul{margin-top:8px; padding-left:18px;}
+  .tl-detail li{margin-bottom:5px;}
+  .tl-meta{
+    font-family:'Inter', sans-serif;
+    font-size:12px;
+    color:var(--ink-faint);
+    margin-top:8px;
+  }
+
+  /* ---------- CURRENT WORK / PROJECTS ---------- */
+  .proj{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+  }
+  .proj.proj-single{
+    grid-template-columns:1fr;
+    max-width:520px;
+  }
+  .proj-card{
+    background:var(--surface);
+    padding:28px;
+  }
+  .status-pill{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    font-family:'Inter', sans-serif;
+    font-size:10.5px;
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+    color:var(--teal);
+    background:var(--teal-soft);
+    padding:4px 9px;
+    border-radius:var(--radius);
+    margin-bottom:14px;
+  }
+  .status-pill::before{
+    content:"";
+    width:6px; height:6px;
+    background:var(--teal);
+    border-radius:50%;
+    display:inline-block;
+  }
+  .proj-card h3{
+    font-family:'Source Serif 4', serif;
+    font-weight:600;
+    font-size:19px;
+    margin-bottom:10px;
+  }
+  .proj-card p{font-size:14.5px; color:var(--ink-soft); margin-bottom:12px;}
+  .proj-tags{display:flex; flex-wrap:wrap; gap:8px;}
+  .proj-tag{
+    font-family:'Inter', sans-serif;
+    font-size:11px;
+    color:var(--ink-soft);
+    border:1px solid var(--line);
+    padding:3px 8px;
+    border-radius:var(--radius);
+  }
+
+  /* ---------- SKILLS ---------- */
+  .skills-cols{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:28px;
+  }
+  .skill-col .sk-label{
+    font-family:'Inter', sans-serif;
+    font-size:11px;
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+    color:var(--amber);
+    margin-bottom:12px;
+  }
+  .skill-col ul{list-style:none;}
+  .skill-col li{
+    font-size:14.5px;
+    color:var(--ink-soft);
+    padding:6px 0;
+    border-top:1px solid var(--line);
+  }
+  .skill-col li:first-child{border-top:none;}
+
+  /* ---------- CONTACT / FOOTER ---------- */
+  .contact{
+    padding:64px 0 40px;
+  }
+  .contact-inner{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    flex-wrap:wrap;
+    gap:32px;
+  }
+  .contact h2{
+    font-family:'Source Serif 4', serif;
+    font-weight:600;
+    font-size:32px;
+    max-width:16ch;
+    line-height:1.15;
+  }
+  .contact-list{
+    font-family:'Inter', sans-serif;
+    font-size:14px;
+  }
+  .contact-list a{
+    display:block;
+    padding:8px 0;
+    border-top:1px solid var(--line);
+    text-decoration:none;
+    transition:color .15s ease;
+  }
+  .contact-list a:first-child{border-top:none;}
+  .contact-list a:hover{color:var(--amber);}
+
+  footer{
+    padding:20px 0 40px;
+    font-family:'Inter', sans-serif;
+    font-size:11px;
+    color:var(--ink-faint);
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:8px;
+  }
+
+  /* ---------- reveal on scroll ---------- */
+  .reveal{
+    opacity:0;
+    transform:translateY(14px);
+    transition:opacity .6s ease, transform .6s ease;
+  }
+  .reveal.in{opacity:1; transform:translateY(0);}
+
+  /* ---------- responsive ---------- */
+  @media (max-width:760px){
+    .summary-grid{grid-template-columns:1fr;}
+    .focus-grid{grid-template-columns:1fr;}
+    .proj{grid-template-columns:1fr;}
+    .skills-cols{grid-template-columns:1fr 1fr;}
+    .tl-item{grid-template-columns:1fr;}
+    .hero-grid{grid-template-columns:1fr;}
+    .facts-card{max-width:420px;}
+    .contact-inner{flex-direction:column; align-items:flex-start;}
+  }
+  @media (max-width:480px){
+    .skills-cols{grid-template-columns:1fr;}
+  }
+
+  :focus-visible{
+    outline:2px solid var(--amber);
+    outline-offset:2px;
+  }
+</style>
+</head>
+<body>
+
+  <header class="hero">
+    <svg class="contour-bg" viewBox="0 0 1000 500" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M-20,420 C150,380 250,460 420,410 C590,360 650,440 820,400 C900,380 950,400 1020,390" fill="none" stroke="#2E6B63" stroke-opacity="0.10" stroke-width="1.5"/>
+      <path d="M-20,450 C160,410 260,480 430,440 C600,400 660,460 830,430 C910,415 960,425 1020,415" fill="none" stroke="#2E6B63" stroke-opacity="0.08" stroke-width="1.5"/>
+      <path d="M-20,60 C180,20 260,90 440,55 C610,25 690,80 860,50 C930,38 970,48 1020,40" fill="none" stroke="#C0842C" stroke-opacity="0.10" stroke-width="1.5"/>
+      <path d="M-20,90 C190,55 270,115 450,85 C620,58 700,105 870,80 C935,70 975,78 1020,70" fill="none" stroke="#C0842C" stroke-opacity="0.07" stroke-width="1.5"/>
+    </svg>
+
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <div class="hero-eyebrow"><span class="dot"></span>Disaster Management &nbsp;·&nbsp; Dhaka, Bangladesh</div>
+          <h1 class="name">Md Naimur Rahman Shanto</h1>
+          <p class="role-line">Disaster Management undergraduate — building toward a career in <em>early warning systems and humanitarian coordination.</em></p>
+          <p class="thesis">I work at the point where field research meets crisis response: statistical analysis of risk and vulnerability, project documentation for humanitarian action, and coordination across technical committees. Based in Dhaka, trained on Bangladesh's coasts.</p>
+
+          <div class="hero-actions">
+            <a class="btn primary" href="mailto:naimshanto2004@gmail.com">Email me</a>
+            <a class="btn" href="https://www.linkedin.com/in/naimur-rahman-shanto-/" target="_blank" rel="noopener">LinkedIn profile</a>
+            <a class="btn" href="tel:+8801315315568">+880 1315-315568</a>
+          </div>
+        </div>
+
+        <div class="facts-card">
+          <div class="fact">
+            <div class="fact-label">Institution</div>
+            <div class="fact-value">University of Dhaka — IDMVS</div>
+          </div>
+          <div class="fact">
+            <div class="fact-label">Program</div>
+            <div class="fact-value">Bachelor of Disaster Management, 11th Batch</div>
+          </div>
+          <div class="fact">
+            <div class="fact-label">Currently</div>
+            <div class="fact-value">Digital Marketing Intern, Connectivo</div>
+          </div>
+          <div class="fact">
+            <div class="fact-label">Status</div>
+            <div class="fact-value">Open to internship / entry-level roles</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+  <section class="reveal">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="sec-code">A — SUMMARY</span>
+        <h2 class="sec-title">Professional summary</h2>
+      </div>
+      <div class="summary-grid">
+        <p>Motivated and academically high-achieving Disaster Management undergraduate at the University of Dhaka with hands-on experience in operations management and customer-facing roles. Demonstrates strong analytical thinking, cross-functional communication, and a commitment to public service — seeking to contribute to humanitarian, development, or public-sector organizations through research, project coordination, and stakeholder engagement.</p>
+        <div class="field-notes">
+          <div class="fn-item">
+            <div class="fn-label">CGPA</div>
+            <div>3.70 / 4.00 — through 6th semester</div>
+          </div>
+          <div class="fn-item">
+            <div class="fn-label">Languages</div>
+            <div>Bengali (native), English (professional working proficiency)</div>
+          </div>
+          <div class="fn-item">
+            <div class="fn-label">Location</div>
+            <div>Mirpur, Dhaka — originally from Patuakhali</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="sec-code">B — FOCUS AREAS</span>
+        <h2 class="sec-title">Where I work</h2>
+      </div>
+      <div class="focus-grid">
+        <div class="focus-card">
+          <div class="fc-code">01</div>
+          <h3>Research &amp; statistical analysis</h3>
+          <p>Quantitative research methods, SPSS-based hypothesis testing, ANOVA, correlation, and multiple regression applied to public health and vulnerability data.</p>
+        </div>
+        <div class="focus-card">
+          <div class="fc-code">02</div>
+          <h3>Humanitarian project design</h3>
+          <p>LogFrames, SWOT analysis, budgeting, and ethical project closure — translating field problems into fundable, accountable intervention plans.</p>
+        </div>
+        <div class="focus-card">
+          <div class="fc-code">03</div>
+          <h3>Early warning &amp; coordination</h3>
+          <p>Systems documentation and standards work for early warning architecture, across technical committees and cross-organizational clusters.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="sec-code">C — CURRENT WORK</span>
+        <h2 class="sec-title">Active involvement</h2>
+      </div>
+      <div class="proj proj-single">
+        <div class="proj-card">
+          <span class="status-pill">Ongoing</span>
+          <h3>Systems Documentation &amp; Standards Officer</h3>
+          <p>International Association of Disaster Management (IADM) — Early Warning Systems Architecture &amp; Technology cluster, within the Early Warning &amp; Risk Intelligence Committee (EWRIC).</p>
+          <p>Contributing technical review on early warning architecture principles and DPI/SDI/eGovernance integration ahead of committee presentations.</p>
+          <div class="proj-tags">
+            <span class="proj-tag">Early warning systems</span>
+            <span class="proj-tag">Standards documentation</span>
+            <span class="proj-tag">Committee research</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="sec-code">D — EDUCATION</span>
+        <h2 class="sec-title">Education</h2>
+      </div>
+      <div class="tl">
+        <div class="tl-item">
+          <div class="tl-date">Aug 2023 —<br>Present</div>
+          <div>
+            <div class="tl-org">University of Dhaka</div>
+            <div class="tl-role">Bachelor of Disaster Management (BDM), 11th Batch</div>
+            <div class="tl-detail">Institute of Disaster Management &amp; Vulnerability Studies (IDMVS)</div>
+            <div class="tl-meta">CGPA 3.70 / 4.00 — through 6th semester</div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-date">Sep 2020 —<br>Feb 2022</div>
+          <div>
+            <div class="tl-org">Patuakhali Government College</div>
+            <div class="tl-role">Higher Secondary Certificate (HSC), Science</div>
+            <div class="tl-meta">GPA 5.00 / 5.00</div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-date">Passed<br>2020</div>
+          <div>
+            <div class="tl-org">Patuakhali Government Jubilee High School</div>
+            <div class="tl-role">Secondary School Certificate (SSC), Science</div>
+            <div class="tl-meta">GPA 4.72 / 5.00</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="sec-code">E — EXPERIENCE</span>
+        <h2 class="sec-title">Work experience</h2>
+      </div>
+      <div class="tl">
+        <div class="tl-item">
+          <div class="tl-date">2026 —<br>Present</div>
+          <div>
+            <div class="tl-org">Connectivo</div>
+            <div class="tl-role">Digital Marketing Intern</div>
+            <div class="tl-detail">Applying research, content, and analytical skills to client campaigns at a digital marketing agency.</div>
+            <div class="tl-meta">Ongoing</div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-date">Jun 2021 —<br>Apr 2023</div>
+          <div>
+            <div class="tl-org">Standard IT</div>
+            <div class="tl-role">Operations Executive (Part-Time) — Dhaka</div>
+            <div class="tl-detail">
+              <ul>
+                <li>Recruited and onboarded new employees, training them on page management and dispatch systems.</li>
+                <li>Served as primary point of contact for customer enquiries on products, services, and company information.</li>
+                <li>Maintained accurate customer records in the CRM database and prepared monthly sales reports for senior management.</li>
+                <li>Resolved inbound customer queries by phone, guiding clients through the online ordering process.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-date">Apr 2020 —<br>Jun 2021</div>
+          <div>
+            <div class="tl-org">Banoful &amp; Co</div>
+            <div class="tl-role">Customer Service Representative (Part-Time) — Dhaka</div>
+            <div class="tl-detail">
+              <ul>
+                <li>Handled customer enquiries across phone and social media channels, ensuring timely, professional resolution.</li>
+                <li>Updated and maintained the customer database, submitting monthly performance reports to supervisors.</li>
+                <li>Supported customers placing online orders and provided end-to-end service through social media platforms.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="sec-code">F — SKILLS</span>
+        <h2 class="sec-title">Skills &amp; competencies</h2>
+      </div>
+      <div class="skills-cols">
+        <div class="skill-col">
+          <div class="sk-label">Technical tools</div>
+          <ul>
+            <li>SPSS</li>
+            <li>Microsoft Excel</li>
+            <li>Microsoft Word</li>
+            <li>Microsoft PowerPoint</li>
+          </ul>
+        </div>
+        <div class="skill-col">
+          <div class="sk-label">Digital &amp; media</div>
+          <ul>
+            <li>WordPress</li>
+            <li>SEO</li>
+            <li>Canva</li>
+            <li>Digital marketing</li>
+            <li>Video editing</li>
+            <li>Sound engineering</li>
+          </ul>
+        </div>
+        <div class="skill-col">
+          <div class="sk-label">Core competencies</div>
+          <ul>
+            <li>Research methods</li>
+            <li>Statistical analysis</li>
+            <li>Project coordination</li>
+            <li>Disaster risk reduction</li>
+            <li>Humanitarian action</li>
+          </ul>
+        </div>
+        <div class="skill-col">
+          <div class="sk-label">Languages</div>
+          <ul>
+            <li>Bengali — native</li>
+            <li>English — professional working proficiency</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact reveal">
+    <div class="wrap">
+      <div class="contact-inner">
+        <h2>Open to internship and entry-level opportunities in disaster management and humanitarian response.</h2>
+        <div class="contact-list">
+          <a href="mailto:naimshanto2004@gmail.com">naimshanto2004@gmail.com</a>
+          <a href="tel:+8801315315568">+880 1315-315568</a>
+          <a href="https://www.linkedin.com/in/naimur-rahman-shanto-/" target="_blank" rel="noopener">linkedin.com/in/naimur-rahman-shanto-</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap" style="width:100%; display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px;">
+      <span>MD NAIMUR RAHMAN SHANTO</span>
+      <span>DHAKA, BANGLADESH — 2026</span>
+    </div>
+  </footer>
+
+  <script>
+    const revealEls = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, {threshold:0.08});
+    revealEls.forEach(el => io.observe(el));
+  </script>
+
+</body>
+</html>
